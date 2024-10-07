@@ -17,6 +17,7 @@ class App {
     }
 
     var resp = await repository.getWeather(SearchQuery(city));
-    print('Погода в городе $city: ${resp.temp-273} по Цельсию, тип: ${resp.type}');
+
+    print('Погода в городе $city: ${resp.temp} по Цельсию, тип: ${resp.type}');
   }
 }
