@@ -7,9 +7,9 @@ import 'package:practice_1/features/core/presentation/app.dart';
 
 const String version = '0.0.1';
 const String urlOSM = 'https://api.openweathermap.org';
-const String apiKeyOSM = '75e2e5e3d508df1bc09b82145ce62ddc';
+const String apiKeyOSM = 'insert_your_osm_key';
 const String urlVC = 'https://weather.visualcrossing.com';
-const String apiKeyVC = 'GL3TBMB2J47UUVD5NGR47NRHZ';
+const String apiKeyVC = 'insert_your_vc_key';
 
 void main(List<String> arguments) {
   var app = App(WeatherRepositoryOSM(OSMApi(urlOSM, apiKeyOSM)));
