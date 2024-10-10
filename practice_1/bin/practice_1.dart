@@ -12,8 +12,9 @@ const String urlVC = 'https://weather.visualcrossing.com';
 const String apiKeyVC = 'insert_your_vc_key';
 
 void main(List<String> arguments) {
-  var app = App(WeatherRepositoryOSM(OSMApi(urlOSM, apiKeyOSM)));
-//var app = App(WeatherRepositoryVC(VCApi(urlVC, apiKeyVC)));
+//var app = App(WeatherRepositoryOSM(OSMApi(urlOSM, apiKeyOSM)));
+  var app = App(WeatherRepositoryVC(VCApi(urlVC, apiKeyVC)));
+//var app = App(WeatherRepositoryDebug();
 
   app.run();
 }

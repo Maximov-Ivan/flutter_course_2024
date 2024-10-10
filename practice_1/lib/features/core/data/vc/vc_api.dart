@@ -9,8 +9,15 @@ class VCApi {
 
   VCApi(this.url, this.apiKey);
 
-  Future<VCWeather> getWeather(String city) async {
-    var response = await http.get(Uri.parse('$url/VisualCrossingWebServices/rest/services/timeline/$city/today?unitGroup=metric&key=$apiKey&contentType=json'));
+  Future<VCWeather> getWeatherCity(String city) async {
+    var response = await http.get(Uri.parse('$url/VisualCrossingWebServices/rest/services/timeline/$city?unitGroup=metric&key=$apiKey&contentType=json'));
+    var rJson = jsonDecode(response.body);
+
+    return VCWeather(rJson['currentConditions']['temp'], rJson['currentConditions']['icon']);
+  }
+
+  Future<VCWeather> getWeatherCoord(String lat, String lon) async {
+    var response = await http.get(Uri.parse('$url/VisualCrossingWebServices/rest/services/timeline/$lat%2C$lon?unitGroup=metric&key=$apiKey&contentType=json'));
     var rJson = jsonDecode(response.body);
 
     return VCWeather(rJson['currentConditions']['temp'], rJson['currentConditions']['icon']);

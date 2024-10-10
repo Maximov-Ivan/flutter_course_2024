@@ -8,16 +8,43 @@ class App {
   App(this.repository);
 
   void run() async {
-    print('Введите город:');
-    var city = stdin.readLineSync();
+    print('Выберите тип запроса:\n  city - по городу\n  coord - по координатам');
+    var mode = stdin.readLineSync();
 
-    if (city == null) {
-      print('Ошибка ввода');
-      return;
+    if (mode == 'city') {
+      print('Введите город:');
+      var city = stdin.readLineSync();
+
+      if (city == null) {
+        print('Ошибка ввода');
+        return;
+      }
+
+      var resp = await repository.getWeatherCity(SearchQueryCity(city));
+
+      print('Погода в городе $city: ${resp.temp} по Цельсию, тип: ${resp.type}');
     }
 
-    var resp = await repository.getWeather(SearchQuery(city));
+    else if (mode == 'coord') {
+      print('Введите широту');
+      var lat = stdin.readLineSync();
 
-    print('Погода в городе $city: ${resp.temp} по Цельсию, тип: ${resp.type}');
+      if (lat == null) {
+        print('Ошибка ввода');
+        return;
+      }
+
+      print('Введите долготу');
+      var lon = stdin.readLineSync();
+
+      if (lon == null) {
+        print('Ошибка ввода');
+        return;
+      }
+
+      var resp = await repository.getWeatherCoord(SearchQueryCoord(lat, lon));
+
+      print('Погода по координатам $lat $lon: ${resp.temp} по Цельсию, тип: ${resp.type}');
+    }
   }
 }

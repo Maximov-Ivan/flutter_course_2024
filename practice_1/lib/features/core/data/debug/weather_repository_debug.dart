@@ -4,7 +4,12 @@ import 'package:practice_1/features/core/domain/repositories/weather_repository.
 
 class WeatherRepositoryDebug implements WeatherRepository {
   @override
-  Future<SearchResponse> getWeather(SearchQuery query) async {
+  Future<SearchResponse> getWeatherCity(SearchQueryCity query) async {
+    return SearchResponse(285, WeatherType.clear);
+  }
+
+  @override
+  Future<SearchResponse> getWeatherCoord(SearchQueryCoord query) async {
     return SearchResponse(285, WeatherType.clear);
   }
 }
