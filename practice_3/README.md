@@ -17,4 +17,4 @@
 - `Column`, `Center`, `Padding`, `SizedBox`, `Container` для структурирования виджетов на экране
 
 ### Видео-демонстрация
-[App_demo.webm](./App_demo.webm)
+[App_demo.webm](https://github.com/user-attachments/assets/295ce043-df4b-4813-ad84-40bf34ed2ca6)
