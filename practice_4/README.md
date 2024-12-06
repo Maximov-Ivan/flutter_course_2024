@@ -17,4 +17,6 @@
 - `Column`, `Center`, `Padding`, `SizedBox`, `Expanded` для структурирования виджетов на экране
 
 ### Видео-демонстрация
+[App_demo.webm](https://github.com/user-attachments/assets/f699bc48-9b6d-4761-a035-00eb8be8f196)
+
 
