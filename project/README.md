@@ -29,3 +29,4 @@
 - `Column`, `Padding`, `Expanded` для структурирования виджетов на экране
 
 ### Видео-демонстрация
+[App_demo.webm](https://github.com/user-attachments/assets/c5c56082-dbfa-43be-af08-9df19c32f6cd)
